@@ -7,6 +7,7 @@ import {
 
 import Home from './Home'
 import RecipeDetailsPage from './RecipeDetailsPage'
+import RecipeEditPage from './RecipeEditPage'
 import RecipesPage from './RecipesPage'
 
 function App() {
@@ -17,6 +18,9 @@ function App() {
         <li><Link to="/recipes">Recipes</Link></li>
       </ul>
       <Switch>
+        <Route path="/recipes/:id/edit">
+          <RecipeEditPage/>
+        </Route>
         <Route path="/recipes/:id">
           <RecipeDetailsPage/>
         </Route>

@@ -1,11 +1,12 @@
 import useSWR from 'swr'
-import { useParams } from 'react-router-dom'
+import { Link, useRouteMatch, useParams } from 'react-router-dom'
 
 import fetcher from './lib/fetcher'
 import RecipeDetails from './RecipeDetails'
 
 export default function RecipeDetailsPage() {
   const { id } = useParams()
+  const  match  = useRouteMatch()
   const { data, error, isLoading } = useSWR(`/api/recipes/${id}/`, fetcher)
   let content
   if (isLoading) {
@@ -15,7 +16,12 @@ export default function RecipeDetailsPage() {
   } else if (data.detail) {
     content = <p>Error loading recipe. {data.detail}</p>
   } else {
-    content = <RecipeDetails recipe={data}/>
+    content = (
+      <>
+        <RecipeDetails recipe={data}/>
+        <Link to={`${match.url}/edit`}>Edit</Link>
+      </>
+    )
   }
   return (
     <>
