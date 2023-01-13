@@ -31,7 +31,8 @@ export default function EditableField(
         <input
           type="text"
           id={id}
-          value={value}
+          name={name}
+          value={value || ''}
           onChange={onChange}
         />
         {unitContent}

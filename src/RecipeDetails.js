@@ -15,11 +15,11 @@ export default function RecipeDetails({ recipe }) {
           <ul>
             {
               recipe.ingredients.map(
-                ingredient => <li>{ingredient.name}</li>
+                (ingredient, index) => <li key={index}>{ingredient.name}</li>
               )
             }
           </ul>
-        ) : "No igredients"
+        ) : "No ingredients"
       }</dd>
       <dt>Description</dt>
       <dd>{recipe.description || "No description"}</dd>
