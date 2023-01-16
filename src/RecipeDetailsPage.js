@@ -19,7 +19,9 @@ export default function RecipeDetailsPage() {
     content = (
       <>
         <RecipeDetails recipe={data}/>
-        <Link to={`${match.url}/edit`}>Edit</Link>
+        <Link to={`${match.url}/edit`}><button>Edit</button></Link>
+        {' '}
+        <Link to={`${match.url}/delete`}><button>Delete</button></Link>
       </>
     )
   }
