@@ -9,11 +9,11 @@ class UpdateError extends Error {
   }
 }
 
-const update = async (url, data) => {
+const update = async (url, data, {method}) => {
   const res = await fetch(
     url,
     {
-      method: 'PATCH',
+      method: method || 'PATCH',
       headers: {
         authorization: `Token ${TOKEN}`,
         'content-type': 'application/json',

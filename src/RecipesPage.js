@@ -27,6 +27,7 @@ export default function RecipesPage() {
     <>
       <h2>Recipes</h2>
       {content}
+      <Link to="/recipes/create"><button>Create new recipe</button></Link>
     </>
   )
 }

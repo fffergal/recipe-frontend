@@ -7,6 +7,7 @@ import {
 
 import Home from './Home'
 import RecipeDetailsPage from './RecipeDetailsPage'
+import RecipeCreatePage from './RecipeCreatePage'
 import RecipeEditPage from './RecipeEditPage'
 import RecipesPage from './RecipesPage'
 
@@ -18,6 +19,9 @@ function App() {
         <li><Link to="/recipes">Recipes</Link></li>
       </ul>
       <Switch>
+        <Route path="/recipes/create">
+          <RecipeCreatePage/>
+        </Route>
         <Route path="/recipes/:id/edit">
           <RecipeEditPage/>
         </Route>
