@@ -17,8 +17,8 @@ export default function RecipesPage() {
   } else {
     content = (
       <ul>
-        {data.map(recipe => (
-          <li><Link to={`/recipes/${recipe.id}`}>{recipe.title}</Link></li>
+        {data.map((recipe, index) => (
+          <li key={index}><Link to={`/recipes/${recipe.id}`}>{recipe.title}</Link></li>
         ))}
       </ul>
     )
